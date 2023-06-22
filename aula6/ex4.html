@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var nome = window.prompt("Qual é o seu nome? ")
+        // Formatar Strings
+        document.write(`Olá, <strong>${nome}</strong>!. Seu nome tem ${nome.length} letras. <br>`) // para escrever no documento(HTML)
+        //Pode usar comandos HTML também
+        document.write(`Seu nome em maiúsculas é ${nome.toUpperCase()} <br>`)
+        document.write(`Seu nome em maiúsculas é ${nome.toLowerCase()}`)
+
+        //Formatar número
+        // var n1 = 1543.5
+        // n1.toFixed(2) : para determinar as casas decimais
+        // n1.toFixed(2).replace('.', ',') : para modificar uma coisa para outra
+        // n1.toFixed(2).replace(/JavaScript/g, 'PHP') : para substituir tudo no texto
+        // n1.toLocaleString('pt-br', {style: 'currency', currency: 'BRL'})
+        // retorna uma string com uma representação sensível ao idioma da data presente na mesm
+        // 'pt-br': localizar o idioma / dinheiro - currency: tipo / currency: 'BRL' : tipo de dinheiro
+        // no  style: 'currency' pode usar também decimal, percent, unit
+
+    </script>
+</body>
+</html>
