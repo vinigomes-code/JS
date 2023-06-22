@@ -1,0 +1,14 @@
+Operadores - JavaScript
+
+- Aritmético: +, -, *, /, %, **
+- Atribuição: =, +=, -=, *=, /=, %=, **=
+- Incremento: ++, --
+- Relacionais
+- Lógicos
+- Ternaário
+
+Ordem de Precendência
+- ()
+- **
+- * / %
+- + -
