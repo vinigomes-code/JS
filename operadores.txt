@@ -3,12 +3,23 @@ Operadores - JavaScript
 - Aritmético: +, -, *, /, %, **
 - Atribuição: =, +=, -=, *=, /=, %=, **=
 - Incremento: ++, --
-- Relacionais
-- Lógicos
-- Ternaário
+- Relacionais: >, <, >=, <=, ==, !=
+    - Identidade: ===, !==
+- Lógicos: !(não), &&(e), ||(ou)
+    - unarios: um valor lógico
+    - binario: dois valores lógicos
+- Ternaário: (teste)?(true: oque vai aconceter qunaodo for veradadeiro):(false: oque vai aconceter qunaodo for falso )
+
 
 Ordem de Precendência
-- ()
-- **
-- * / %
-- + -
+- AritméticoS
+    - ()
+    - **
+    - * / %
+    - + -
+- Relacionais
+    - > Ordem de esquerda para direita
+- Lógicos
+    - Not
+    - E
+    - Ou
