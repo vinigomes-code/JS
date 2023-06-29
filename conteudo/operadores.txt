@@ -8,7 +8,7 @@ Operadores - JavaScript
 - Lógicos: !(não), &&(e), ||(ou)
     - unarios: um valor lógico
     - binario: dois valores lógicos
-- Ternaário: (teste)?(true: oque vai aconceter qunaodo for veradadeiro):(false: oque vai aconceter qunaodo for falso )
+- Ternário: (teste)?(true: oque vai aconceter qunaodo for veradadeiro):(false: oque vai aconceter qunaodo for falso )
 
 
 Ordem de Precendência
