@@ -1,6 +1,6 @@
 DOM(Document Object Model)
 
-- representa o mesmo documento para que possa ser manipulado. O DOM é uma representação orientada a objetos da página da web, que pode ser modificada com uma linguagem de script    como JavaScript.
+- representa o mesmo documento para que possa ser manipulado. O DOM é uma representação orientada a objetos da página da web, que pode ser modificada com uma linguagem de script como JavaScript.
 
 Árvoe DOM:
 Em baixo; chield; Emcima: Parent
@@ -17,3 +17,9 @@ mousedown: segurar o botão do mouse
 mouseup: segurar e soltar o botão
 click: clicar com o botão
 mouseout: sair da div
+
+/* innerText: Essa propriedade define ou retorna o texto visível dentro de um elemento, excluindo qualquer código HTML presente. Isso significa que ele retornará apenas o texto sem as tags HTML.*/
+
+/*.innerHTML: Essa propriedade define ou retorna o conteúdo HTML dentro de um elemento, incluindo todas as tags HTML presentes. Isso permite modificar tanto o texto quanto a estrutura HTML de um elemento.*/
+
+/*textContent: Essa propriedade define ou retorna o texto dentro de um elemento, incluindo todo o texto, independentemente de haver tags HTML presentes. Ao contrário do .innerText, o .textContent não renderiza elementos ocultos por CSS.*/
