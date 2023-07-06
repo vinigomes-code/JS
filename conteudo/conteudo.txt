@@ -23,3 +23,15 @@ mouseout: sair da div
 /*.innerHTML: Essa propriedade define ou retorna o conteúdo HTML dentro de um elemento, incluindo todas as tags HTML presentes. Isso permite modificar tanto o texto quanto a estrutura HTML de um elemento.*/
 
 /*textContent: Essa propriedade define ou retorna o texto dentro de um elemento, incluindo todo o texto, independentemente de haver tags HTML presentes. Ao contrário do .innerText, o .textContent não renderiza elementos ocultos por CSS.*/
+
+
+Escopo de bloco: A principal diferença entre let e var é como elas lidam com o escopo. As variáveis declaradas com let têm escopo de bloco, o que significa que elas são acessíveis apenas dentro do bloco em que foram declaradas, seja um bloco de função, um bloco condicional (if, for, while, etc.) ou um bloco de declaração ({ ... }). Por outro lado, as variáveis declaradas com var têm escopo de função ou escopo global, o que significa que elas são acessíveis dentro da função em que foram declaradas ou globalmente, fora de qualquer função.
+
+
+
+Atributos são as propriedades de um objeto. 
+Métodos são as ações que um objeto pode realizar.
+
+
+Funções: São ações executadas assim que são chamadas ou em decorrência de um algum evento
+- Uma função pode receber parâmetros e retornar um resultado
