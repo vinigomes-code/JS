@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reajustar salário</title>
+    <style>
+        input{
+            height: 50px;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reajuste salarial</h1>
+    <input type="button" value="Reajustar Salário" onclick="reajustar()">
+    <p id="tit">Clique no botão acima para iniciar</p>
+    <div class="res"></div>
+
+    <script>
+        function reajustar(){
+            let nome = window.prompt('Qual é o nome do funcionário?')
+            let sal = Number(window.prompt(`Qual o salário de ${nome}`).replace(',', '.'))
+            let reaj = Number(window.prompt(`O salário de ${nome} vai ser reajustado em qual porcentagem?`).replace(',', '.'))
+            
+            let tit = document.getElementById('tit')
+            let res = document.querySelector('.res')
+            res.innerHTML = ``
+
+            let desconto = (sal * reaj) / 100
+            let newsal = sal + desconto
+
+
+            tit.innerHTML = `<h2>${nome} recebeu um aumento salarial!</h2>`
+
+            res.innerHTML += `<p>O salário atual era R$ ${sal}</p>`.replace('.', ',')
+            res.innerHTML += `<p>Com um aumento de ${reaj}%, o salário vai aumentar R$ ${desconto.toFixed(2)} no próximo mês.</p>`.replace('.', ',')
+            res.innerHTML += `<p>E a partir daí, ${nome} vai passar a ganhar ${newsal.toFixed(2)}</p>`.replace('.', ',')
+
+        }
+    </script>
+</body>
+</html>
