@@ -9,12 +9,17 @@
             height: 50px;
             width: 100px;
         }
+
+        strong.pos{
+            background-color: yellow;
+        }
     </style>
 </head>
 <body>
     <h1>Resolvendo Bhaskara</h1>
     <input type="button" value="Calcular" onclick="calcular()">
     <p id="tit">Considerando uma equação no formato <strong>ax<sup>2</sup> + bx + c = 0, </strong> aperte o botão acima para calcular o Δ</p>
+    <div class="res"></div>
 
     <script>
 
@@ -22,7 +27,28 @@
         function calcular(){
             let a = Number(window.prompt('Qual é o valor de a?'))
             let b = Number(window.prompt('Qual é o valor de b?'))
-            let c = Number(window.prompt('Qual é o valor de c?'))  
+            let c = Number(window.prompt('Qual é o valor de c?'))
+            
+            let del = cal(a, b, c)
+            imprimir(a, b, c, del)
+        }
+
+        function cal(a, b, c){
+            let del = ((b**2) - 4 * a * c)
+            return del
+        }
+
+        function imprimir(a, b, c, del){
+            let res = document.querySelector('.res')
+            let tit = document.getElementById('tit')
+
+            res.innerHTML = ''
+
+            tit.innerHTML = '<h1>Resolvendo Bhaskara</h1>'
+
+            res.innerHTML += `<p>A equação atual é <strong>${a}x<sup>2</sup> + ${b}x + ${c} = 0</strong></p>`
+            res.innerHTML += `O cálculo realizado será <strong>Δ = ${b}<sup>2</sup> - 4 . ${a} . ${c}</strong> `
+            res.innerHTML += `<p>O valor calculado foi <strong class='pos'> Δ = ${del}</strong></p>`
         }
     </script>
 </body>
