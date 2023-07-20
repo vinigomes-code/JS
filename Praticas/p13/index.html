@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Situação do aluno</title>
+    <style>
+        input{
+            height: 50px;
+            width: 200px;
+        }
+
+        span#aprov{
+            background-color: rgba(0, 128, 0, 0.473);
+        }
+        span#reprov{
+            background-color: rgba(255, 0, 0, 0.432);
+        }
+        span#recup{
+            background-color: rgba(255, 255, 0, 0.404);
+        }
+    </style>
+</head>
+<body>
+    <h1>Situação do aluno</h1>
+    <input type="button" value="Entrar com as notas" onclick="entrar()">
+    <p id="tit">Clique no botão acima para informar as notas do aluno</p>
+    <div id="res"></div>
+
+    <script>
+        function entrar(){
+            let nome = prompt('Qual é o nome do aluno?')
+            let nota1 = Number(prompt(`Primeira nota de ${nome}`))
+            let nota2 = Number(prompt(`Segunda nota de ${nome}`))
+
+            let res = document.getElementById('res')
+            let media = (nota1 + nota2) / 2
+
+            let cab = cabecalho(nome, nota1, nota2, media)
+            let cal = calcular(nota1, nota2, media)
+
+            res.innerHTML += `<p>${cal}</p>`
+        }
+
+        function calcular(n1, n2, media){
+
+            if(media > 6){
+                return `Com média acima de 6,0, o aluno está <span id='aprov'>APROVADO</span>`
+            }else if(media > 3 && media <= 6){
+                return `Com entre 3,5 e 6,0, o aluno está <span id='recup'>RECUPERAÇÃO</span>`
+            }else{
+                return `Com média abaixo de 3,0, o aluno está <span id='reprov'>REPROVADO</span>`
+            }
+        }
+
+        function cabecalho(nome, n1, n2, media){
+            let tit = document.getElementById('tit')
+            let res = document.getElementById('res')
+
+            n1 = n1.toString().replace('.', ',');
+            n2 = n2.toString().replace('.', ',');
+
+            tit.innerHTML = `<h2>Analisando a situação da(o) ${nome}</h2>`
+
+            res.innerHTML = ``
+            res.innerHTML += `<p>Com as notas ${n1} e ${n2}, a <strong> média é ${media}</strong></p>`
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de cliques</title>
+    <style>
+        input{
+            height: 50px;
+            width: 150px;
+        }
+
+        span{
+            background-color: rgba(255, 255, 0, 0.411);
+        }
+    </style>
+</head>
+<body>
+    <h1>Contador de cliques</h1>
+    <input type="button" value="Clique em mim" onclick="contar()">
+    <input type="button" value="Zerar o contador" onclick="limpar()">
+    <div id="res"><p>O contador está com <span>0</span> cliques.</p></div>
+
+    <script>
+        let num = 0
+        function contar(){
+            let res = document.getElementById('res')
+            num ++ 
+            res.innerHTML = `<p>O contador está com <span>${num}</span> cliques.</p>`
+        }
+
+        function limpar(){
+            let res = document.getElementById('res')
+            num = 0
+            res.innerHTML = null
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preço mudou</title>
+    <style>
+        input{
+            height: 50px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preço mudou</h1>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <p id="p">Clique no botão acima para analisar a mudança de preço.</p>
+    <div id="res"></div>
+
+    <script>
+        function verificar(){
+            let antigo = Number(prompt("Qual era o preço anterior do produto?"))
+            let atual = Number(prompt('Qual o preço atual do produto? '))
+
+            cab(antigo, atual)
+            let cal = calcularVariacao(antigo, atual)
+
+            res.innerHTML += `<p>${cal.mensagem}</p>`;
+            res.innerHTML += `<p>${cal.valor}</p>`;
+            res.innerHTML += `<p>${cal.variacao}</p>`
+        }
+
+        function cab(antigo, atual){
+            let res = document.getElementById('res')
+            let tit = document.getElementById('p')
+
+            res.innerHTML = ``
+            tit.innerHTML = `<h1>Analisando os valores informados</h1>`
+            res.innerHTML = `<p>O produto custava R$ ${antigo.toFixed(2).replace('.', ",")} e agora custa R$ ${atual.toFixed(2).replace('.', ",")}</p>`;
+        }
+
+        function calcularVariacao(precoAntigo, precoAtual) {
+            if (precoAntigo > precoAtual) {
+                let desconto = precoAntigo - precoAtual;
+                let porcentagem = ((precoAtual * 100) / precoAntigo);
+
+                return {
+                    mensagem: "Hoje o produto está mais barato",
+                    valor: `O preço caiu R$ ${desconto.toFixed(2).replace('.', ",")} em relação ao preço anterior`,
+                    variacao: `Uma variação de ${100 - porcentagem}% pra baixo.`
+                };
+            } else {
+                let aumento = precoAtual - precoAntigo;
+                let porcentagem = ((precoAntigo * 100) / precoAtual);
+
+                return {
+                    mensagem: "Hoje o produto está mais caro",
+                    valor: `O preço subiu R$ ${aumento.toFixed(2).replace('.', ",")} em relação ao preço anterior`,
+                    variacao: `Uma variação de ${100 - porcentagem}% pra cima.`
+                };
+            }
+        }
+
+    </script>
+</body>
+</html>
