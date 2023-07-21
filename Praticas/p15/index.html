@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Múltiplas ações</title>
+    <style>
+        input{
+            height: 50px;
+            width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Múltiplas ações</h1>
+    <input type="button" value="Clique para iniciar" onclick="escolher()">
+    <p id="tit">Clique no botão para começar</p>
+    <div id="res"></div>
+
+    <script>
+        function escolher(){
+            let n1 = Number(prompt("Primeiro valor:"))
+            let n2 = Number(prompt("Segundo valor:"))
+            let op = prompt(`Valores informados: ${n1} e ${n2}\nO que vamos fazer?\n[1] Somar\n[2] Subtrair\n[3] Multiplicar\n[4] Dividir`)
+
+            let res = document.getElementById('res')
+            res.innerHTML = ''
+
+            switch(op){
+                case '1':
+                    res.innerHTML += `<p>${n1} + ${n2} = <strong>${n1+n2}</strong></p>`
+                    break;
+                case '2':
+                    res.innerHTML += `<p>${n1} - ${n2} = <strong>${n1-n2}</strong></p>`
+                    break;
+                case '3':
+                    res.innerHTML += `<p>${n1} x ${n2} = <strong>${n1*n2}</strong></p>`
+                    break;
+                case '4':
+                    res.innerHTML += `<p>${n1} ÷ ${n2} = <strong>${n1/n2}</strong></p>`
+                    break;
+                default:
+                    alert('VALOR INVÁLIDO! TENTE NOVAMENTE!')
+            }
+        }
+    </script>
+</body>
+</html>

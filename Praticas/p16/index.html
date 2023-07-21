@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de números</title>
+    <style>
+        input {
+            width: 100px;
+            height: 50px;
+        }
+
+        span{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h1>Gerador de número</h1>
+    <input type="button" value="Clique em mim" onclick="gerar()">
+    <input type="button" value="Limpar" onclick="limpar()">
+    <p>Cada vez que você apertar o botão acima, eu penso em um número entre 1 e 100.</p>
+    <div id="res"></div>
+
+    <script>
+        function gerar(){
+            let min = 1
+            let max = 100
+            let dif = max - min
+            let aleatorio = Math.random()
+            let num = min + Math.trunc(aleatorio * dif)
+
+            let res = document.getElementById('res')
+            res.innerHTML += `<p>Acabei de pensar no número <span>${num}</span>!</p>`
+        }
+
+        function limpar(){
+            let res = document.getElementById('res')
+            res.innerHTML = ``
+        }
+    </script>
+</body>
+</html>
