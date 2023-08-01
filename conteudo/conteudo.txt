@@ -35,3 +35,13 @@ Métodos são as ações que um objeto pode realizar.
 
 Funções: São ações executadas assim que são chamadas ou em decorrência de um algum evento
 - Uma função pode receber parâmetros e retornar um resultado
+
+Em JavaScript, os seguintes valores são considerados "falsy":
+
+false
+0 (zero)
+'' (string vazia)
+null
+undefined
+NaN (Not-a-Number)
+Qualquer outro valor é considerado "truthy".
